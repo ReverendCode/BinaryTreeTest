@@ -2,11 +2,14 @@ package com.company;
 
 import com.sun.xml.internal.bind.v2.runtime.unmarshaller.LocatorEx;
 
+import java.util.EmptyStackException;
+
 /**
  * Created by Code on 7/16/14.
  */
 public class Tree {
     private StringNode root;
+    private StringNode deletePoint = null;
 
     public Tree() {
         root=null;
@@ -49,10 +52,46 @@ public class Tree {
                 if (temp.right==null) return false;
                 temp=temp.right;
             }//end if
+            deletePoint=temp;
         }//end for
         //if you make it out of the for loop
         //temp is pointing to the string you want now
 
         return true;
     }
+    private String preOrderDisplay(StringNode current) {
+        String output="";
+        if (current == null) return output;
+        output += current.value + " ";
+        output += preOrderDisplay(current.left);
+        output += preOrderDisplay(current.right);
+        return output;
+    }
+    public String preDisplay() {
+        return preOrderDisplay(root);
+    }
+    private String inOrderDisplay(StringNode current) {
+        String output = "";
+        if (current==null) return output;
+        output += inOrderDisplay(current.left);
+        output += current.value + " ";
+        output += inOrderDisplay(current.right);
+        return output;
+    }
+    public String inOrder() {
+        return inOrderDisplay(root);
+    }
+    private String postOrderDisplay(StringNode current) {
+        String output="";
+        if (current==null) return output;
+        output+=postOrderDisplay(current.left);
+        output+=postOrderDisplay(current.right);
+        output+=current.value + " ";
+
+        return output;
+    }
+    public String postOrder() {
+        return postOrderDisplay(root);
+    }
+
 }
