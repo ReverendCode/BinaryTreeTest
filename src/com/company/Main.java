@@ -3,7 +3,7 @@ package com.company;
 public class Main {
 
     public static void main(String[] args) {
-        Tree testTree = new Tree();
+        WordTree testTree = new WordTree();
         testTree.addString("middle");
         testTree.addString("grape");
         testTree.addString("apple");
@@ -15,6 +15,11 @@ public class Main {
         System.out.println(testTree.preDisplay());
         System.out.println(testTree.inOrder());
         System.out.println(testTree.postOrder());
+
+        MathTree postFixer = new MathTree();
+        postFixer.loadTree("AB+CD-*");
+        System.out.println(postFixer.postFixOutput());
+        System.out.println(postFixer.inFix());
 
 
 

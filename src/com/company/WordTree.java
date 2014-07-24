@@ -7,11 +7,11 @@ import java.util.EmptyStackException;
 /**
  * Created by Code on 7/16/14.
  */
-public class Tree {
+public class WordTree {
     private StringNode root;
     private StringNode deletePoint = null;
 
-    public Tree() {
+    public WordTree() {
         root=null;
     }
 
@@ -59,6 +59,8 @@ public class Tree {
 
         return true;
     }
+
+    //recursion is easy, but inefficient
     private String preOrderDisplay(StringNode current) {
         String output="";
         if (current == null) return output;
@@ -81,7 +83,7 @@ public class Tree {
     public String inOrder() {
         return inOrderDisplay(root);
     }
-    private String postOrderDisplay(StringNode current) {
+    private String postOrderDisplay(StringNode current) {//recursion recursion
         String output="";
         if (current==null) return output;
         output+=postOrderDisplay(current.left);
