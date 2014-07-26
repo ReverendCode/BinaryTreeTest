@@ -20,6 +20,10 @@ public class Main {
         postFixer.loadTree("AB+CD-*");
         System.out.println(postFixer.postFixOutput());
         System.out.println(postFixer.inFix());
+        postFixer.loadTree("ABC++D*");
+        System.out.println(postFixer.postFixOutput());
+        postFixer.loadTree("AB-DE*F-+");
+        System.out.println(postFixer.postFixOutput());
 
 
 

@@ -15,7 +15,7 @@ public class MathTree {
     }
 
     public void loadTree(String datum) {//this works for postfix
-        for (int i=0;i<datum.length();i++) {
+        for (int i=0;i<datum.length();i++) { //*NOTE* this dumps whatever is in memory already each time it is called
            if ((datum.charAt(i) >='a' && datum.charAt(i)<='z') ||
                    (datum.charAt(i) >= 'A' && datum.charAt(i) <= 'Z')) {
                theStack.push(new Leaf(datum.charAt(i)));

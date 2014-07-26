@@ -8,8 +8,10 @@ public class Leaf {
     public Leaf left;
     public Leaf right;
 
+
     public Leaf(int val) {
         value=val;
         left=right=null;
     }
+
 }
